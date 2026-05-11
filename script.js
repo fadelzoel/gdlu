@@ -6,85 +6,86 @@
     // Replace with your WhatsApp number (include country code, no + or spaces)
     const WHATSAPP_NUMBER = '6281376753900';
 
+    
     // Your products - edit this array to add your own items
     const products = [
       {
         id: 1,
-        name: 'Shadow Realm Hoodie',
-        price: 89.99,
-        originalPrice: 110,
-        category: 'hoodies',
-        image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=600&fit=crop',
+        name: 'xx',
+        price: 189000,
+        originalPrice: 210000,
+        category: 't-shirts',
+        image: 'image/gallery/notFinal1.jpeg',
         isNew: true,
         isSoldOut: false
       },
       {
         id: 2,
-        name: 'Nightmare Tee',
-        price: 45,
+        name: 'xx',
+        price: 189000,
         originalPrice: null,
         category: 't-shirts',
-        image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&h=600&fit=crop',
+        image: 'image/gallery/notFinal2.jpeg',
         isNew: true,
         isSoldOut: false
       },
       {
         id: 3,
-        name: 'Afterlife Joggers',
-        price: 75,
+        name: 'Placeholdder',
+        price: 189000,
         originalPrice: null,
-        category: 'bottoms',
-        image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&h=600&fit=crop',
+        category: 't-shirts',
+        image: 'image/gallery/notFinal3.jpeg',
         isNew: false,
         isSoldOut: false
       },
       {
         id: 4,
-        name: 'Hail to the King Cap',
-        price: 35,
+        name: 'Placeholdder',
+        price: 189000,
         originalPrice: null,
-        category: 'accessories',
-        image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&h=600&fit=crop',
+        category: 't-shirts',
+        image: 'image/gallery/notFinal4.jpeg',
         isNew: false,
         isSoldOut: false
       },
       {
         id: 5,
-        name: 'Buried Alive Jacket',
+        name: 'Placeholdder',
         price: 150,
         originalPrice: 185,
         category: 'outerwear',
-        image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop',
+        image: 'https://blocks.astratic.com/img/general-img-square.png',
         isNew: false,
         isSoldOut: false
       },
       {
         id: 6,
-        name: 'Beast Mode Hoodie',
+        name: 'Placeholdder',
         price: 95,
         originalPrice: null,
         category: 'hoodies',
-        image: 'https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?w=600&h=600&fit=crop',
+        image: 'https://blocks.astratic.com/img/general-img-square.png',
         isNew: false,
         isSoldOut: true
       },
       {
         id: 7,
-        name: 'Deathbat Logo Tee',
+        name: 'Placeholdder',
         price: 40,
         originalPrice: null,
         category: 't-shirts',
-        image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=600&fit=crop',
+        image: 'https://blocks.astratic.com/img/general-img-square.png',
         isNew: true,
         isSoldOut: false
       },
       {
         id: 8,
-        name: 'Seize the Day Shorts',
+        name: 'Placeholdder',
         price: 55,
         originalPrice: 70,
         category: 'bottoms',
-        image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&h=600&fit=crop',
+        image: 'https://blocks.astratic.com/img/general-img-square.png',
         isNew: false,
         isSoldOut: false
       }
@@ -105,7 +106,7 @@
       const message = encodeURIComponent(
         `Hi! I'm interested in buying:\n\n` +
         `*${product.name}*\n` +
-        `Price: $${product.price.toFixed(2)}\n\n` +
+        `Price: Rp${product.price.toFixed(2)}\n\n` +
         `Please let me know if it's available!`
       );
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
@@ -126,9 +127,9 @@
       const buyBtnLink = product.isSoldOut ? '#' : whatsappLink;
 
       const priceHTML = product.originalPrice 
-        ? `<span class="current-price">$${product.price.toFixed(2)}</span>
-           <span class="original-price">$${product.originalPrice.toFixed(2)}</span>`
-        : `<span class="current-price">$${product.price.toFixed(2)}</span>`;
+        ? `<span class="current-price">Rp${product.price.toFixed(2)}</span>
+           <span class="original-price">Rp${product.originalPrice.toFixed(2)}</span>`
+        : `<span class="current-price">Rp${product.price.toFixed(2)}</span>`;
 
       return `
         <article class="product-card" data-category="${product.category}">
