@@ -4,7 +4,7 @@
     // ===========================================
     
     // Replace with your WhatsApp number (include country code, no + or spaces)
-    const WHATSAPP_NUMBER = '6481376753900';
+    const WHATSAPP_NUMBER = '6281376753900';
 
     // Your products - edit this array to add your own items
     const products = [
