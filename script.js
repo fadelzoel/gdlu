@@ -12,8 +12,8 @@
       {
         id: 1,
         name: 'WHITE GHOST',
-        price: 349000,
-        originalPrice: 599000,
+        price: 349.000,
+        originalPrice: 599.000,
         category: 't-shirts',
         image: 'image/gallery/notFinal1.jpeg',
         isNew: true,
@@ -22,7 +22,7 @@
       {
         id: 2,
         name: 'LOWKEY',
-        price: 349,
+        price: 349.000,
         originalPrice: 599.000, 
         category: 't-shirts',
         image: 'image/gallery/notFinal2.jpeg',
@@ -32,7 +32,7 @@
       {
         id: 3,
         name: 'DARK TRIAD',
-        price: 349,
+        price: 350000,
         originalPrice: null,
         category: 't-shirts',
         image: 'image/gallery/notFinal3.jpeg',
