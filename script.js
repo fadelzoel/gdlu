@@ -11,9 +11,9 @@
     const products = [
       {
         id: 1,
-        name: 'xx',
-        price: 350000,
-        originalPrice: null,
+        name: 'WHITE GHOST',
+        price: 349.000,
+        originalPrice: 599.000,
         category: 't-shirts',
         image: 'image/gallery/notFinal1.jpeg',
         isNew: true,
@@ -21,9 +21,9 @@
       },
       {
         id: 2,
-        name: 'xx',
-        price: 350000,
-        originalPrice: null,
+        name: 'LOWKEY',
+        price: 349.000,
+        originalPrice: 599.000, 
         category: 't-shirts',
         image: 'image/gallery/notFinal2.jpeg',
         isNew: true,
@@ -31,7 +31,7 @@
       },
       {
         id: 3,
-        name: 'xx',
+        name: 'DARK TRIAD',
         price: 350000,
         originalPrice: null,
         category: 't-shirts',
@@ -41,7 +41,7 @@
       },
       {
         id: 4,
-        name: 'xx',
+        name: 'GENGAR EDITION',
         price: 350000,
         originalPrice: null,
         category: 't-shirts',
