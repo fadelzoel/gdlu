@@ -128,8 +128,8 @@
 
       const priceHTML = product.originalPrice 
         ? `<span class="current-price">Rp${Number(product.price).toLocalString('id-ID')}</span>
-           <span class="original-price">$${Number(product.originalprice).toLocalString('id-ID')}</span>`
-        : `<span class="current-price">$${Number(product.price).toLocalString('id-ID')}</span>`;
+           <span class="original-price">Rp${Number(product.originalprice).toLocalString('id-ID')}</span>`
+        : `<span class="current-price">Rp${Number(product.price).toLocalString('id-ID')}</span>`;
 
       return `
         <article class="product-card" data-category="${product.category}">
