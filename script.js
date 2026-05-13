@@ -106,7 +106,7 @@
       const message = encodeURIComponent(
         `Hi! I'm interested in buying:\n\n` +
         `*${product.name}*\n` +
-        `Price: $${product.price.toFixed(2)}\n\n` +
+        `Price: Rp${Number(product.price).toLocalString('id-ID')}\n\n` +
         `Please let me know if it's available!`
       );
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
@@ -127,9 +127,9 @@
       const buyBtnLink = product.isSoldOut ? '#' : whatsappLink;
 
       const priceHTML = product.originalPrice 
-        ? `<span class="current-price">$${product.price.toFixed(2)}</span>
-           <span class="original-price">$${product.originalPrice.toFixed(2)}</span>`
-        : `<span class="current-price">$${product.price.toFixed(2)}</span>`;
+        ? `<span class="current-price">Rp${Number(product.price).toLocalString('id-ID')}</span>
+           <span class="original-price">$${Number(product.originalprice).toLocalString('id-ID')}</span>`
+        : `<span class="current-price">$${Number(product.price).toLocalString('id-ID')}</span>`;
 
       return `
         <article class="product-card" data-category="${product.category}">
