@@ -12,8 +12,8 @@
       {
         id: 1,
         name: 'xx',
-        price: 189000,
-        originalPrice: 210000,
+        price: 350000,
+        originalPrice: null,
         category: 't-shirts',
         image: 'image/gallery/notFinal1.jpeg',
         isNew: true,
@@ -22,7 +22,7 @@
       {
         id: 2,
         name: 'xx',
-        price: 189000,
+        price: 350000,
         originalPrice: null,
         category: 't-shirts',
         image: 'image/gallery/notFinal2.jpeg',
@@ -31,8 +31,8 @@
       },
       {
         id: 3,
-        name: 'Placeholdder',
-        price: 189000,
+        name: 'xx',
+        price: 350000,
         originalPrice: null,
         category: 't-shirts',
         image: 'image/gallery/notFinal3.jpeg',
@@ -41,8 +41,8 @@
       },
       {
         id: 4,
-        name: 'Placeholdder',
-        price: 189000,
+        name: 'xx',
+        price: 350000,
         originalPrice: null,
         category: 't-shirts',
         image: 'image/gallery/notFinal4.jpeg',
@@ -51,12 +51,12 @@
       },
       {
         id: 5,
-        name: 'Placeholdder',
-        price: 150,
-        originalPrice: 185,
+        name: 'XX',
+        price: 320000,
+        originalPrice: 350000,
         category: 'outerwear',
-        image: 'https://blocks.astratic.com/img/general-img-square.png',
-        isNew: false,
+        image: 'image/gallery/final1.jpeg',
+        isNew: true,
         isSoldOut: false
       },
       {
