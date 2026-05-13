@@ -12,7 +12,7 @@
       {
         id: 1,
         name: 'WHITE GHOST',
-        price: 349,000,
+        price: 349000,
         originalPrice: 599.000,
         category: 't-shirts',
         image: 'image/gallery/notFinal1.jpeg',
@@ -22,7 +22,7 @@
       {
         id: 2,
         name: 'LOWKEY',
-        price: 349.000,
+        price: 349000,
         originalPrice: 599.000, 
         category: 't-shirts',
         image: 'image/gallery/notFinal2.jpeg',
