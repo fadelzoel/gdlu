@@ -106,7 +106,7 @@
       const message = encodeURIComponent(
         `Hi! I'm interested in buying:\n\n` +
         `*${product.name}*\n` +
-        `Price: Rp${product.price.toLocalString('id-ID')}\n\n` +
+        `Price: Rp${product.price.toFixed(2)}\n\n` +
         `Please let me know if it's available!`
       );
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
