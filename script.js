@@ -12,8 +12,8 @@
       {
         id: 1,
         name: 'WHITE GHOST',
-        price: 21.99,
-        originalPrice: 37,
+        price: 349000,
+        originalPrice: 599000,
         category: 't-shirts',
         image: 'image/gallery/notFinal1.jpeg',
         isNew: true,
