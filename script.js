@@ -22,7 +22,7 @@
       {
         id: 2,
         name: 'LOWKEY',
-        price: 349000,
+        price: 349,
         originalPrice: 599.000, 
         category: 't-shirts',
         image: 'image/gallery/notFinal2.jpeg',
@@ -32,7 +32,7 @@
       {
         id: 3,
         name: 'DARK TRIAD',
-        price: 350000,
+        price: 349,
         originalPrice: null,
         category: 't-shirts',
         image: 'image/gallery/notFinal3.jpeg',
@@ -106,7 +106,7 @@
       const message = encodeURIComponent(
         `Hi! I'm interested in buying:\n\n` +
         `*${product.name}*\n` +
-        `Price: Rp${Number(product.price).toLocalString('id-ID')}\n\n` +
+        `Price: Rp${product.price.toFixed(2)}\n\n` +
         `Please let me know if it's available!`
       );
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
@@ -127,9 +127,9 @@
       const buyBtnLink = product.isSoldOut ? '#' : whatsappLink;
 
       const priceHTML = product.originalPrice 
-        ? `<span class="current-price">Rp${Number(product.price).toLocalString('id-ID')}</span>
-           <span class="original-price">Rp${Number(product.originalprice).toLocalString('id-ID')}</span>`
-        : `<span class="current-price">Rp${Number(product.price).toLocalString('id-ID')}</span>`;
+        ? `<span class="current-price">Rp${product.price.toFixed(2)}</span>
+           <span class="original-price">Rp${product.originalPrice.toFixed(2)}</span>`
+        : `<span class="current-price">Rp${product.price.toFixed(2)}</span>`;
 
       return `
         <article class="product-card" data-category="${product.category}">
