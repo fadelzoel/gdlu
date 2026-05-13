@@ -127,7 +127,7 @@
       const buyBtnLink = product.isSoldOut ? '#' : whatsappLink;
 
       const priceHTML = product.originalPrice 
-        ? `<span class="current-price">Rp${product.price.toLocalString('id-ID')}</span>
+        ? `<span class="current-price">Rp${product.price.toFixed(2)}</span>
            <span class="original-price">Rp${product.originalPrice.toFixed(2)}</span>`
         : `<span class="current-price">Rp${product.price.toFixed(2)}</span>`;
 
