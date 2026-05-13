@@ -12,7 +12,7 @@
       {
         id: 1,
         name: 'WHITE GHOST',
-        price: 349.000.00,
+        price: 349,000,
         originalPrice: 599.000,
         category: 't-shirts',
         image: 'image/gallery/notFinal1.jpeg',
