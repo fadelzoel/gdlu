@@ -103,14 +103,14 @@
     }
 
     function createWhatsAppLink(product) {
-      const message = encodeURIComponent(
-        `Hi! I'm interested in buying:\n\n` +
-        `*${product.name}*\n` +
-        `Price: Rp${product.price.toFixed(2)}\n\n` +
-        `Please let me know if it's available!`
-      );
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-    }
+    const message = encodeURIComponent(
+    `Hi! I'm interested in buying:\n\n` +
+    `*${product.name}*\n` +
+    `Price: Rp${product.price.toLocaleString('id-ID')}\n\n` +
+    `Please let me know if it's available!`
+  );
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+}
 
     function createProductCard(product) {
       const whatsappLink = createWhatsAppLink(product);
@@ -127,9 +127,9 @@
       const buyBtnLink = product.isSoldOut ? '#' : whatsappLink;
 
       const priceHTML = product.originalPrice 
-        ? `<span class="current-price">Rp${product.price.toFixed(2)}</span>
-           <span class="original-price">Rp${product.originalPrice.toFixed(2)}</span>`
-        : `<span class="current-price">Rp${product.price.toFixed(2)}</span>`;
+        ? `<span class="current-price">Rp${product.price.toLocaleString('id-ID')}</span>
+           <span class="original-price">Rp${product.originalPrice.toLocaleString('id-ID')}</span>`
+        : `<span class="current-price">Rp${product.price.toLocaleString('id-ID')}</span>`;
 
       return `
         <article class="product-card" data-category="${product.category}">
