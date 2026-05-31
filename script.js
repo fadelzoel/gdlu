@@ -22,7 +22,7 @@
       {
         id: 2,
         name: 'LOWKEY',
-        price: 349.000,
+        price: 349000,
         originalPrice: 599.000, 
         category: 't-shirts',
         image: 'image/gallery/notFinal2.jpeg',
@@ -59,36 +59,6 @@
         isNew: true,
         isSoldOut: false
       },
-      {
-        id: 6,
-        name: 'Placeholdder',
-        price: 95,
-        originalPrice: null,
-        category: 'hoodies',
-        image: 'https://blocks.astratic.com/img/general-img-square.png',
-        isNew: false,
-        isSoldOut: true
-      },
-      {
-        id: 7,
-        name: 'Placeholdder',
-        price: 40,
-        originalPrice: null,
-        category: 't-shirts',
-        image: 'https://blocks.astratic.com/img/general-img-square.png',
-        isNew: true,
-        isSoldOut: false
-      },
-      {
-        id: 8,
-        name: 'Placeholdder',
-        price: 55,
-        originalPrice: 70,
-        category: 'bottoms',
-        image: 'https://blocks.astratic.com/img/general-img-square.png',
-        isNew: false,
-        isSoldOut: false
-      }
     ];
 
     // ===========================================
