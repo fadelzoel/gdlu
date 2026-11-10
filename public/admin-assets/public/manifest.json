@@ -1,0 +1,16 @@
+{
+  "short_name": "CoreUI-React",
+  "name": "CoreUI-React sample",
+  "icons": [
+    {
+      "src": "/coreui-react/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/coreui-react/",
+  "scope": "/coreui-react/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
