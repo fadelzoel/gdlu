@@ -1,3 +1,6 @@
+## Project Structure
+
+```text
 laravel-project/
 ├── app/
 │   ├── Http/
@@ -41,3 +44,4 @@ laravel-project/
 │
 └── routes/
     └── web.php                             # (Backend) route ke controller
+```
