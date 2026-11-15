@@ -2,27 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory;
+    public const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+    public const LOW_STOCK = 5;
 
-    protected $fillable = [
-        'name',
-        'price',
-        'original_price',
-        'category',
-        'image',
-        'is_new',
-        'is_sold_out',
-    ];
+    protected $fillable = ['image', 'name', 'quantity', 'price', 'size', 'color'];
 
     protected $casts = [
-        'price'          => 'integer',
-        'original_price' => 'integer',
-        'is_new'         => 'boolean',
-        'is_sold_out'    => 'boolean',
+        'price' => 'decimal:2',
+        'quantity' => 'integer',
     ];
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
+
+    public function getImageUrlAttribute(): ?string
+    {
+        return $this->image ? asset('storage/' . $this->image) : null;
+    }
+
+    // change the currency symbol in ONE place
+    public function getFormattedPriceAttribute(): string
+    {
+        return '$' . number_format($this->price, 2);
+    }
 }

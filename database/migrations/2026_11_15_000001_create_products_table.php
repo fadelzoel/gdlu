@@ -10,13 +10,12 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
             $table->string('name');
-            $table->unsignedInteger('price');
-            $table->unsignedInteger('original_price')->nullable();
-            $table->string('category');
-            $table->string('image');
-            $table->boolean('is_new')->default(false);
-            $table->boolean('is_sold_out')->default(false);
+            $table->unsignedInteger('quantity')->default(0);
+            $table->decimal('price', 12, 2);
+            $table->string('size', 10);
+            $table->string('color', 50)->nullable(); // only some items have a color
             $table->timestamps();
         });
     }
