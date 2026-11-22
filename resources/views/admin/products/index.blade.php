@@ -37,6 +37,7 @@
             <tr>
               <th>Image</th>
               <th>Name</th>
+              <th>Category</th>
               <th>Size</th>
               <th>Color</th>
               <th>Quantity</th>
@@ -59,6 +60,7 @@
                   @endif
                 </td>
                 <td>{{ $product->name }}</td>
+                <td>{{ $product->category_label }}</td>
                 <td><span class="badge bg-primary-subtle text-primary-emphasis">{{ $product->size }}</span></td>
                 <td>{{ $product->color ?? '—' }}</td>
                 <td>
@@ -68,7 +70,12 @@
                     {{ $product->quantity }}
                   @endif
                 </td>
-                <td>{{ $product->formatted_price }}</td>
+                <td>
+                  {{ $product->formatted_price }}
+                  @if ($product->has_discount)
+                    <small class="text-secondary text-decoration-line-through d-block">{{ $product->formatted_original_price }}</small>
+                  @endif
+                </td>
                 <td class="text-end">
                   <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-sm btn-white">Edit</a>
                   <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="d-inline"
@@ -80,7 +87,7 @@
                 </td>
               </tr>
             @empty
-              <tr><td colspan="7" class="text-center text-secondary py-5">No products found.</td></tr>
+              <tr><td colspan="8" class="text-center text-secondary py-5">No products found.</td></tr>
             @endforelse
           </tbody>
         </table>

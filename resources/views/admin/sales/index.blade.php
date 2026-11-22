@@ -28,7 +28,7 @@
     <div class="col-md-4">
       <div class="card card-lg h-100"><div class="card-body">
         <span class="text-secondary">Revenue</span>
-        <h3 class="mb-0">${{ number_format($totals['revenue'], 2) }}</h3>
+        <h3 class="mb-0">Rp{{ number_format($totals['revenue'], 0, ',', '.') }}</h3>
       </div></div>
     </div>
   </div>

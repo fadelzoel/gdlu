@@ -17,22 +17,30 @@ class ShopSeeder extends Seeder
             ['name' => 'Admin', 'password' => Hash::make('password')]
         );
 
+        // name, category, price, original price, size, color, qty, image (inside /public), is it new?
         $items = [
-            ['Basic White T-Shirt', 40, 12.50, 'M', 'White'],
-            ['Black Hoodie', 15, 35.00, 'L', 'Black'],
-            ['Slim Fit Jeans', 22, 29.90, 'M', 'Blue'],
-            ['Oversized Shirt', 3, 24.00, 'XL', null],
-            ['Cargo Pants', 18, 32.00, 'L', 'Khaki'],
-            ['Denim Jacket', 8, 55.00, 'M', null],
-            ['Polo Shirt', 30, 18.75, 'S', 'Navy'],
-            ['Summer Dress', 12, 27.00, 'S', 'Red'],
+            ['WHITE GHOST',    't-shirts',  349000, 599000, 'L', 'White',  25, 'image/gallery/notFinal1.jpeg', true],
+            ['LOWKEY',         't-shirts',  349000, 599000, 'M', 'Black',  18, 'image/gallery/notFinal2.jpeg', true],
+            ['DARK TRIAD',     't-shirts',  350000, null,   'L', 'Black',  12, 'image/gallery/notFinal3.jpeg', false],
+            ['GENGAR EDITION', 't-shirts',  350000, null,   'M', 'Purple',  3, 'image/gallery/notFinal4.jpeg', false],
+            ['XX',             'outerwear', 320000, 350000, 'XL', null,    15, 'image/gallery/final1.jpeg',    true],
         ];
 
-        foreach ($items as [$name, $qty, $price, $size, $color]) {
-            Product::firstOrCreate(
-                ['name' => $name],
-                ['quantity' => $qty, 'price' => $price, 'size' => $size, 'color' => $color]
-            );
+        foreach ($items as [$name, $category, $price, $original, $size, $color, $qty, $image, $isNew]) {
+            $product = Product::updateOrCreate(['name' => $name], [
+                'category' => $category,
+                'price' => $price,
+                'original_price' => $original,
+                'size' => $size,
+                'color' => $color,
+                'quantity' => $qty,
+                'image' => $image,
+            ]);
+
+            // only the "new" ones keep a fresh created_at (the NEW badge lasts 14 days)
+            if (!$isNew) {
+                $product->forceFill(['created_at' => now()->subDays(30)])->saveQuietly();
+            }
         }
 
         if (Sale::count() === 0) {

@@ -1,64 +1,49 @@
 @extends('layouts.shop')
 
-@section('title', config('app.name') . ' - Clothing Online Shop')
-
 @section('content')
   <!-- Hero -->
-  <section class="hero py-5">
-    <div class="container py-4 py-lg-5">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <span class="badge rounded-pill text-bg-light mb-3">New arrivals</span>
-          <h1 class="display-4 fw-bold mb-3">Wear it your way.</h1>
-          <p class="lead text-white-50 mb-4">
-            Fresh styles for every day. Browse the latest pieces straight from our stock.
-          </p>
-          <a href="{{ route('shop.catalog') }}" class="btn btn-light btn-lg px-4">
-            Shop now <i class="bi bi-arrow-right ms-1"></i>
-          </a>
-        </div>
-        <div class="col-lg-5 d-none d-lg-block text-center">
-          <i class="bi bi-handbag" style="font-size: 9rem; opacity: .25;"></i>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">New Collection {{ date('Y') }}</span>
+      <h1 class="hero-title font-display">Premium<br>style</h1>
+      <p class="hero-subtitle">Exclusive designs crafted for those who dare to stand out. Limited drops, unlimited style.</p>
+      <a href="#products" class="hero-btn">
+        Shop Now
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
     </div>
   </section>
 
-  <div class="container">
-    <!-- Shop by size -->
-    <section class="py-4">
-      <div class="d-flex flex-wrap align-items-center gap-2">
-        <span class="fw-semibold me-2">Shop by size:</span>
-        @foreach (\App\Models\Product::SIZES as $size)
-          <a href="{{ route('shop.catalog', ['size' => $size]) }}"
-            class="btn btn-outline-dark btn-sm rounded-pill px-3">{{ $size }}</a>
+  <!-- Main Content -->
+  <main class="main" id="products">
+    <div class="section-header">
+      <h2 class="section-title font-display">Shop Collection</h2>
+      <div class="filter-buttons">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        @foreach (\App\Models\Product::CATEGORIES as $slug => $label)
+          <button type="button" class="filter-btn" data-filter="{{ $slug }}">{{ $label }}</button>
         @endforeach
       </div>
-    </section>
+    </div>
 
-    <!-- Latest products (from the database) -->
-    <section class="pb-4">
-      <div class="d-flex justify-content-between align-items-end mb-4">
-        <div>
-          <h2 class="h3 fw-bold mb-1">Latest arrivals</h2>
-          <p class="text-secondary mb-0">Newest items in stock.</p>
+    <div class="product-grid" id="productGrid">
+      @forelse ($products as $product)
+        @include('products._card', ['product' => $product])
+      @empty
+        <div class="no-results">
+          <h3>No products yet</h3>
+          <p>Check back soon for new drops</p>
         </div>
-        <a href="{{ route('shop.catalog') }}" class="text-dark">View all <i class="bi bi-arrow-right"></i></a>
-      </div>
+      @endforelse
 
-      @if ($latest->isEmpty())
-        <div class="text-center text-secondary py-5">
-          <i class="bi bi-box-seam fs-1 d-block mb-2"></i>
-          No products yet. Check back soon!
-        </div>
-      @else
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-          @foreach ($latest as $product)
-            @include('products._card', ['product' => $product])
-          @endforeach
+      @if ($products->isNotEmpty())
+        <div class="no-results" id="noResults" hidden>
+          <h3>No products found</h3>
+          <p>Try selecting a different category</p>
         </div>
       @endif
-    </section>
-  </div>
+    </div>
+  </main>
 @endsection
-  

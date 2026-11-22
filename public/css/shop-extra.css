@@ -1,0 +1,23 @@
+/* Small additions on top of style.css (style.css itself is untouched) */
+html { scroll-behavior: smooth; }
+
+.product-card[hidden],
+.no-results[hidden] { display: none; }
+
+.product-image-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+}
+
+.product-card.sold-out .product-image { opacity: .5; }
+
+.product-name { margin-bottom: 0.25rem; }
+.product-meta {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+#products { scroll-margin-top: 4.5rem; }

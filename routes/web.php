@@ -7,10 +7,9 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
-// ---------- Public store (catalog comes from the database) ----------
+// ---------- Public store (products come from the database) ----------
 Route::get('/', [ShopController::class, 'home'])->name('shop.home');
-Route::get('/shop', [ShopController::class, 'catalog'])->name('shop.catalog');
-Route::get('/shop/{product}', [ShopController::class, 'show'])->name('shop.show');
+Route::redirect('/shop', '/#products');
 
 // ---------- Admin dashboard ----------
 Route::prefix('admin')->name('admin.')->group(function () {

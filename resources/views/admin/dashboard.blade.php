@@ -34,7 +34,7 @@
           </div>
           <div>
             <span class="text-secondary">Total Revenue</span>
-            <h3 class="mb-0">${{ number_format($totalRevenue, 2) }}</h3>
+            <h3 class="mb-0">Rp{{ number_format($totalRevenue, 0, ',', '.') }}</h3>
           </div>
         </div>
       </div>

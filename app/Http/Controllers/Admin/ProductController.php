@@ -12,12 +12,14 @@ class ProductController extends Controller
     private function rules(): array
     {
         return [
-            'name'     => ['required', 'string', 'max:255'],
-            'quantity' => ['required', 'integer', 'min:0'],
-            'price'    => ['required', 'numeric', 'min:0'],
-            'size'     => ['required', 'in:' . implode(',', Product::SIZES)],
-            'color'    => ['nullable', 'string', 'max:50'],
-            'image'    => ['nullable', 'image', 'max:2048'],
+            'name'           => ['required', 'string', 'max:255'],
+            'category'       => ['required', 'in:' . implode(',', array_keys(Product::CATEGORIES))],
+            'quantity'       => ['required', 'integer', 'min:0'],
+            'price'          => ['required', 'numeric', 'min:0'],
+            'original_price' => ['nullable', 'numeric', 'gt:price'],
+            'size'           => ['required', 'in:' . implode(',', Product::SIZES)],
+            'color'          => ['nullable', 'string', 'max:50'],
+            'image'          => ['nullable', 'image', 'max:2048'],
         ];
     }
 

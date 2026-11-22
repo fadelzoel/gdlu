@@ -24,11 +24,11 @@ class Sale extends Model
 
     public function getFormattedTotalAttribute(): string
     {
-        return '$' . number_format($this->total_price, 2);
+        return 'Rp' . number_format($this->total_price, 0, ',', '.');
     }
 
     public function getFormattedUnitPriceAttribute(): string
     {
-        return '$' . number_format($this->unit_price, 2);
+        return 'Rp' . number_format($this->unit_price, 0, ',', '.');
     }
 }
